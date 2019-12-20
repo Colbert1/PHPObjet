@@ -13,7 +13,13 @@
 
 <body>
     <h2> EXERCICE 5 :</h2>
-    
+
+    <?php
+    $Perso1 = new Personnage(1, "");
+    $Perso1->Affiche();
+
+    ?>
+    <p></p>
 
     <?php
     echo

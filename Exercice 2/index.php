@@ -18,6 +18,7 @@
     $Perso2 = new Personnage(100, "");
 
     ?>
+    <p></p>
     <?php
     echo
         highlight_file(

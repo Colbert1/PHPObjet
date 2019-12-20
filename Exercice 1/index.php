@@ -38,6 +38,7 @@
             </td>
         </tr>
     </table>
+    <p></p>
     <?php
     echo
         highlight_file(

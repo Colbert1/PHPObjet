@@ -19,7 +19,7 @@
     $Perso1->Attaquer($Perso2);
     $Perso2->Attaquer($Perso1);
     ?>
-
+    <p></p>
     <?php
     echo
         highlight_file(

@@ -4,17 +4,21 @@ class Personnage
     //Propriétés
     private $_pseudo;
     private $_vie;
+    private $_PDO;
+    private $_id;
     //Méthode
-    public function __construct($LaVie, $LePseudo)
+    public function __construct($valeurid)
     {
-        $this->_pseudo = $LePseudo;
-        $this->_vie = $LaVie;
+        $this->_id = $valeurid;
+        $BasePersonnage = new PDO('mysql:host=192.168.65.206; dbname=Colbert; charset=utf8', 'Colbert', 'Colbert');
+        $DonneesDeLaBdd = $BasePersonnage->query("select * from Personnage where Id_Perso = " . $valeurid);
+        $TableauDeDonnee  = $DonneesDeLaBdd->fetch();
+        $this->_pseudo = $TableauDeDonnee['Personnage'];
+        $this->_vie = $TableauDeDonnee['Vie'];
     }
-    public function Afficher()
+
+    public function Affiche()
     {
-        echo '<p>Le pseudo est : ' . $this->_pseudo . '</p>';
-        echo 'La vie est : ' . $this->_vie . '</p>';
+        echo "Mon nom est " . $this->_pseudo . " j'ai " . $this->_vie . " point de vie.";
     }
-    public function Attaquer()
-    { }
 }

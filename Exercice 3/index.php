@@ -21,7 +21,7 @@
     $Perso2->Afficher();
 
     ?>
-
+    <p></p>
     <?php
     echo
         highlight_file(
